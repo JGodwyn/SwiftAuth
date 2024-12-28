@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct SwiftAuthApp: App {
+struct BaseView: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MainApp()
         }
     }
 }

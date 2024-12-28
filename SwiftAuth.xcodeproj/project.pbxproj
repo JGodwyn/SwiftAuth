@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B87DC71B2D20014C00A19E55 /* SwiftAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC71A2D20014C00A19E55 /* SwiftAuthApp.swift */; };
-		B87DC71D2D20014C00A19E55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC71C2D20014C00A19E55 /* HomeView.swift */; };
+		B87DC71B2D20014C00A19E55 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC71A2D20014C00A19E55 /* BaseView.swift */; };
+		B87DC71D2D20014C00A19E55 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC71C2D20014C00A19E55 /* MainApp.swift */; };
 		B87DC71F2D20015100A19E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87DC71E2D20015100A19E55 /* Assets.xcassets */; };
 		B87DC7222D20015100A19E55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87DC7212D20015100A19E55 /* Preview Assets.xcassets */; };
 		B87DC72C2D20015200A19E55 /* SwiftAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC72B2D20015200A19E55 /* SwiftAuthTests.swift */; };
 		B87DC7362D20015200A19E55 /* SwiftAuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC7352D20015200A19E55 /* SwiftAuthUITests.swift */; };
 		B87DC7382D20015200A19E55 /* SwiftAuthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC7372D20015200A19E55 /* SwiftAuthUITestsLaunchTests.swift */; };
+		B87DC7472D20042700A19E55 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC7462D20042700A19E55 /* Login.swift */; };
+		B87DC74A2D2009C900A19E55 /* TextFieldStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC7492D2009C900A19E55 /* TextFieldStyles.swift */; };
+		B87DC74C2D200CC300A19E55 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC74B2D200CC300A19E55 /* ButtonStyles.swift */; };
+		B87DC7512D200D3200A19E55 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87DC7502D200D3200A19E55 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +39,8 @@
 
 /* Begin PBXFileReference section */
 		B87DC7172D20014C00A19E55 /* SwiftAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B87DC71A2D20014C00A19E55 /* SwiftAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAuthApp.swift; sourceTree = "<group>"; };
-		B87DC71C2D20014C00A19E55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B87DC71A2D20014C00A19E55 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		B87DC71C2D20014C00A19E55 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		B87DC71E2D20015100A19E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B87DC7212D20015100A19E55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B87DC7272D20015200A19E55 /* SwiftAuthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAuthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		B87DC7312D20015200A19E55 /* SwiftAuthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAuthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87DC7352D20015200A19E55 /* SwiftAuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAuthUITests.swift; sourceTree = "<group>"; };
 		B87DC7372D20015200A19E55 /* SwiftAuthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAuthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B87DC7462D20042700A19E55 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B87DC7492D2009C900A19E55 /* TextFieldStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyles.swift; sourceTree = "<group>"; };
+		B87DC74B2D200CC300A19E55 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		B87DC7502D200D3200A19E55 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,11 @@
 		B87DC7192D20014C00A19E55 /* SwiftAuth */ = {
 			isa = PBXGroup;
 			children = (
-				B87DC71A2D20014C00A19E55 /* SwiftAuthApp.swift */,
-				B87DC71C2D20014C00A19E55 /* HomeView.swift */,
+				B87DC71A2D20014C00A19E55 /* BaseView.swift */,
+				B87DC71C2D20014C00A19E55 /* MainApp.swift */,
+				B87DC7462D20042700A19E55 /* Login.swift */,
+				B87DC74E2D200CEB00A19E55 /* Components */,
+				B87DC7482D2009B500A19E55 /* Styles */,
 				B87DC71E2D20015100A19E55 /* Assets.xcassets */,
 				B87DC7202D20015100A19E55 /* Preview Content */,
 			);
@@ -125,6 +136,23 @@
 				B87DC7372D20015200A19E55 /* SwiftAuthUITestsLaunchTests.swift */,
 			);
 			path = SwiftAuthUITests;
+			sourceTree = "<group>";
+		};
+		B87DC7482D2009B500A19E55 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				B87DC7492D2009C900A19E55 /* TextFieldStyles.swift */,
+				B87DC74B2D200CC300A19E55 /* ButtonStyles.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		B87DC74E2D200CEB00A19E55 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B87DC7502D200D3200A19E55 /* Buttons.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B87DC71D2D20014C00A19E55 /* HomeView.swift in Sources */,
-				B87DC71B2D20014C00A19E55 /* SwiftAuthApp.swift in Sources */,
+				B87DC7472D20042700A19E55 /* Login.swift in Sources */,
+				B87DC74A2D2009C900A19E55 /* TextFieldStyles.swift in Sources */,
+				B87DC71D2D20014C00A19E55 /* MainApp.swift in Sources */,
+				B87DC7512D200D3200A19E55 /* Buttons.swift in Sources */,
+				B87DC74C2D200CC300A19E55 /* ButtonStyles.swift in Sources */,
+				B87DC71B2D20014C00A19E55 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
