@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Login: View {
+    
+    @EnvironmentObject var sessionObj : SessionManager
+    
     var body: some View {
         ZStack {
             Color(.blue)
@@ -28,9 +31,8 @@ struct Login: View {
                     TextField("Your username", text: .constant(""))
                     TextField("Your password", text: .constant(""))
                     MainButton(label: "Login", color: .black, height: 48, fillContainer: true) {
-                        
+                        sessionObj.login()
                     }
-                    
                 }
                 .textFieldStyle(.whiteTextField)
                 .padding(24)
@@ -42,4 +44,5 @@ struct Login: View {
 
 #Preview {
     Login()
+        .environmentObject(SessionManager())
 }

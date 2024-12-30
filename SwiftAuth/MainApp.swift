@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct MainApp: View {
+    @EnvironmentObject private var sessionObj : SessionManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            switch sessionObj.session {
+            case .onboarding:
+                Onboarding() {
+                    sessionObj.completeOnboarding()
+                }
+                .transition(.opacity)
+            case .loggedin:
+                Home()
+                    .transition(.opacity)
+            case .loggedout:
+                Login()
+                    .transition(.opacity)
+            }
         }
-        .padding()
+        .animation(.easeIn, value: sessionObj.session)
     }
 }
 
-#Preview { 
+#Preview {
     MainApp()
+        .environmentObject(SessionManager())
 }
