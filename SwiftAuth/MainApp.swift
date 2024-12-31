@@ -22,7 +22,7 @@ struct MainApp: View {
                 Home()
                     .transition(.opacity)
             case .loggedout:
-                Login()
+                Signup()
                     .transition(.opacity)
             }
         }

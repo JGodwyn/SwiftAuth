@@ -1,5 +1,5 @@
 //
-//  Username.swift
+//  Age.swift
 //  SwiftAuth
 //
 //  Created by Gdwn on 30/12/2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct Username: View {
+struct Age: View {
     
-    @Binding var username : String
+    @Binding var age : Double
     let tappedButton : () -> Void
     
     var body: some View {
@@ -17,14 +17,19 @@ struct Username: View {
             Color(.blue)
                 .ignoresSafeArea()
             VStack {
-                Text("👤")
+                Text("☝️")
                     .font(.system(size: 80))
-                Text("Username")
+                
+                Text("Your age?")
                     .font(.title.bold())
-                TextField("Your username", text: $username)
-                    .textFieldStyle(.whiteTextField)
-                    .foregroundStyle(.black)
-                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true, disabled : username.isEmpty) {
+                
+                Text("\(Int(age))")
+                    .font(.title2.bold())
+                
+                Slider(value: $age, in: 18...100, step: 1)
+                    .tint(.white)
+                
+                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true) {
                     tappedButton()
                 }
                 .padding(.top, 16)
@@ -36,5 +41,5 @@ struct Username: View {
 }
 
 #Preview {
-    Username(username: .constant("")) {}
+    Age(age: .constant(18)){}
 }
