@@ -10,6 +10,7 @@ import SwiftUI
 struct Username: View {
     
     @Binding var username : String
+    @ObservedObject var userobserved : UserClass
     let tappedButton : () -> Void
     
     var body: some View {
@@ -24,7 +25,11 @@ struct Username: View {
                 TextField("Your username", text: $username)
                     .textFieldStyle(.whiteTextField)
                     .foregroundStyle(.black)
-                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true, disabled : username.isEmpty) {
+                if userobserved.hasError {
+                    Text(userobserved.userErrorManager?.errorDescription ?? "")
+                        .transition(.opacity)
+                }
+                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true) {
                     tappedButton()
                 }
                 .padding(.top, 16)
@@ -32,9 +37,10 @@ struct Username: View {
             .padding(24)
         }
         .foregroundStyle(.white)
+        .animation(.easeInOut, value: userobserved.hasError)
     }
 }
 
 #Preview {
-    Username(username: .constant("")) {}
+    Username(username: .constant(""), userobserved: .init()) {}
 }

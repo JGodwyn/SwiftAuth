@@ -33,6 +33,10 @@ struct Login: View {
                     MainButton(label: "Login", color: .black, height: 48, fillContainer: true) {
                         sessionObj.login()
                     }
+                    
+                    MainButton(label: "Sign up instead", height: 48, fillContainer: true) {
+                        sessionObj.signingUp()
+                    }
                 }
                 .textFieldStyle(.whiteTextField)
                 .padding(24)

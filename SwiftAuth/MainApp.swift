@@ -20,10 +20,20 @@ struct MainApp: View {
                 .transition(.opacity)
             case .loggedin:
                 Home()
-                    .transition(.opacity)
+                    .transition(.move(edge: .leading).combined(with: .opacity))
             case .loggedout:
+                if sessionObj.hasLoggedInBefore {
+                    Login()
+                        .transition(.opacity)
+                } else {
+                    Signup()
+                        .transition(.opacity)
+                }
+            case .signingUp:
                 Signup()
                     .transition(.opacity)
+            case .loggingin:
+                Login()
             }
         }
         .animation(.easeIn, value: sessionObj.session)

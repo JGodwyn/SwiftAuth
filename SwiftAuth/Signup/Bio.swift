@@ -10,6 +10,7 @@ import SwiftUI
 struct Bio: View {
     
     @Binding var textContent : String
+    @ObservedObject var userobserved : UserClass
     let tappedButton : () -> Void
     
     var body: some View {
@@ -33,8 +34,12 @@ struct Bio: View {
                                 .padding(.vertical, 8)
                         }
                     }
+                if userobserved.hasError {
+                    Text(userobserved.userErrorManager?.errorDescription ?? "")
+                        .transition(.opacity)
+                }
                 
-                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true, disabled: textContent.isEmpty) {
+                MainButton(label: "Next", color: .black, height: 48,  fillContainer: true) {
                     tappedButton()
                 }
                 .padding(.top, 16)
@@ -46,5 +51,5 @@ struct Bio: View {
 }
 
 #Preview {
-    Bio(textContent: .constant("")) {}
+    Bio(textContent: .constant(""), userobserved: .init()) {}
 }
