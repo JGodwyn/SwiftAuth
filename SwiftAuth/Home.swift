@@ -12,7 +12,8 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var sessionObj : SessionManager
-    @State private var showDocuments : Bool = false
+    @StateObject private var navObj = NavigationClass()
+    @State private var showStore : Bool = false
     
     var body: some View {
         TabView {
@@ -26,21 +27,27 @@ struct Home: View {
                     Label("Test", systemImage: "testtube.2")
                 }
             
-            Documents(showDocuments: $showDocuments)
+            Store(showStore: $showStore)
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("Store", systemImage: "storefront")
+                }
+            
+            Documents()
+                .tabItem {
+                    Label("Document", systemImage: "folder")
                 }
         }
+        .environmentObject(navObj)
     }
 }
 
 #Preview {
     Home()
         .environmentObject(SessionManager())
+        .environmentObject(NavigationClass())
 }
 
 extension Home {
-    
     var content : some View {
         NavigationStack {
             ScrollView {
@@ -49,10 +56,10 @@ extension Home {
                 // the others are deprecated in iOS 16
                 // to use bindings, you need to use the ".navigationDestination"
                 NavigationLink("Go to settings") {
-                    Documents(showDocuments: $showDocuments)
+                    Store(showStore: $showStore)
                 }
                 
-                NavigationLink (destination : Documents(showDocuments: $showDocuments)) {
+                NavigationLink (destination : Store(showStore: $showStore)) {
                     HStack {
                         Image(systemName: "gear")
                         Text("Go to settings")
@@ -61,15 +68,15 @@ extension Home {
                 }
                 
                 MainButton(label: "Go to settings") {
-                    showDocuments.toggle()
+                    showStore.toggle()
                 }
                 
-                Text(String(showDocuments))
+                Text(String(showStore))
             }
             .padding()
             .navigationTitle("Home")
-            .navigationDestination(isPresented: $showDocuments) {
-                Documents(showDocuments: $showDocuments)
+            .navigationDestination(isPresented: $showStore) {
+                Store(showStore: $showStore)
             }
             .toolbar {
                 Button("Log out", role: .destructive) {
@@ -83,7 +90,7 @@ extension Home {
         NavigationStack {
             ScrollView {
                 NavigationLink ("Go to settings") {
-                    Documents(showDocuments: $showDocuments)
+                    Store(showStore: $showStore)
                 }
             }
             .padding()
