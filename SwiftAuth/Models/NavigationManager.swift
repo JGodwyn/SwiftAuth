@@ -22,8 +22,8 @@ final class NavigationClass : ObservableObject {
     }
     
     func popToRoot() {
-//        screenManager = NavigationPath() // this will take it to the root app
-        screenManager.removeLast(screenManager.count) // go to the root app
+        screenManager = NavigationPath() // this will take it to the root app
+//        screenManager.removeLast(screenManager.count) // go to the root app
     }
 }
 

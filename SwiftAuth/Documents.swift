@@ -51,6 +51,3 @@ struct Documents: View {
     Documents()
         .environmentObject(NavigationClass())
 }
-
-
-

@@ -55,19 +55,19 @@ extension Home {
                 // use NavigationLink for basic stuff like below.
                 // the others are deprecated in iOS 16
                 // to use bindings, you need to use the ".navigationDestination"
-                NavigationLink("Go to settings") {
+                NavigationLink("Go to store") {
                     Store(showStore: $showStore)
                 }
                 
                 NavigationLink (destination : Store(showStore: $showStore)) {
                     HStack {
                         Image(systemName: "gear")
-                        Text("Go to settings")
+                        Text("Go to store")
                     }
                     .padding(.vertical)
                 }
                 
-                MainButton(label: "Go to settings") {
+                MainButton(label: "Go to store") {
                     showStore.toggle()
                 }
                 
