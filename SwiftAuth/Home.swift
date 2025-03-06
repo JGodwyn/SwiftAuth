@@ -12,8 +12,17 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var sessionObj : SessionManager
+    @Environment (\.colorScheme) private var colorScheme
     @StateObject private var navObj = NavigationClass()
     @State private var showStore : Bool = false
+    
+    private var schemeName : String {
+        if colorScheme == .light {
+            return "sun.max.fill"
+        } else {
+            return "moon.fill"
+        }
+    }
     
     var body: some View {
         TabView {
@@ -22,9 +31,9 @@ struct Home: View {
                     Label("Home", systemImage: "house")
                 }
             
-            test
+            ThemeChange()
                 .tabItem {
-                    Label("Test", systemImage: "testtube.2")
+                    Label("Theme", systemImage: schemeName)
                 }
             
             Store(showStore: $showStore)
@@ -57,6 +66,7 @@ extension Home {
                 // to use bindings, you need to use the ".navigationDestination"
                 NavigationLink("Go to store") {
                     Store(showStore: $showStore)
+                    
                 }
                 
                 NavigationLink (destination : Store(showStore: $showStore)) {
