@@ -12,7 +12,7 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var sessionObj : SessionManager
-    @Environment (\.colorScheme) private var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
     @StateObject private var navObj = NavigationClass()
     @State private var showStore : Bool = false
     
@@ -64,7 +64,7 @@ extension Home {
                 // use NavigationLink for basic stuff like below.
                 // the others are deprecated in iOS 16
                 // to use bindings, you need to use the ".navigationDestination"
-                NavigationLink("Go to store") {
+                NavigationLink("Go to the store") {
                     Store(showStore: $showStore)
                     
                 }

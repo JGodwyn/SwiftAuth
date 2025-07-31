@@ -23,7 +23,7 @@ enum CurrentState {
 final class SessionManager : ObservableObject {
     
     @Published private(set) var session : CurrentState // you might not have a current state when you open the app
-    @AppStorage ("seenOnboarding") private(set) var seenOnboarding : Bool = false
+    @AppStorage("seenOnboarding") private(set) var seenOnboarding : Bool = false
     @AppStorage("hasLoggedInBefore") private(set) var hasLoggedInBefore : Bool = false
     
     init() {
