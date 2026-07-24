@@ -10,7 +10,7 @@ import SwiftUI
 struct Store: View {
     
     @Binding var showStore : Bool
-    @Environment (\.dismiss) private var dismissScreen // dismiss screen (recommended)
+    @Environment(\.dismiss) private var dismissScreen // dismiss screen (recommended)
     @EnvironmentObject var navManager : NavigationClass
     
     var body: some View {
@@ -115,7 +115,7 @@ struct Product : View {
 struct Cart : View {
     
     @EnvironmentObject var navManager : NavigationClass
-    @Environment (\.dismiss) private var dismissScreen
+    @Environment(\.dismiss) private var dismissScreen
     
     var body: some View {
         VStack {

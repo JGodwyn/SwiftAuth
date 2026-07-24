@@ -11,11 +11,11 @@ struct ThemeChange: View {
     
     // holds the color scheme
     // you can only get from this value, can't assign to it.
-    @Environment (\.colorScheme) private var colorscheme
+    @Environment(\.colorScheme) private var colorscheme
     
     // this holds the value the system will read from
     // I want it to persist, that's why it is stored here
-    @AppStorage ("SystemTheme") private var SystemTheme : SchemeType = .system
+    @AppStorage("SystemTheme") private var SystemTheme : SchemeType = .system
     
     // this handles the switching of the theme
     // I could have done this without the AppStorage but the
